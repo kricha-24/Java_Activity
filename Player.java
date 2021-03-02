@@ -1,18 +1,29 @@
-import java.util.Scanner;
-import java.lang.String;
-class Player
-{
-public static void main(String args[]){
-Scanner sc = new Scanner(System.in);
-String a=sc.nextLine();
-String b=sc.nextLine();
-b=b.toUpperCase();
-String f1=a.substring(0,1);
-String r=a.substring(1,a.length());
-r=r.toLowerCase();
-f1=f1.toUpperCase();
-a=f1+r;
-a=a.concat(" "+b);
-System.out.print(a);
+package com.ltts;
+import java.util.Comparator;
+
+public class Player {
+	String skill,name;
+	
+	public Player(String skill, String name) {
+		super();
+		this.skill = skill;
+		this.name = name;
+	}
+
+	public String getSkill() {
+		return skill;
+	}
+
+	public void setSkill(String skill) {
+		this.skill = skill;
+	}
+
 }
+class PlayerComparator implements Comparator<Player>{
+	public int compare(Player player1, Player player2){
+		return player1.skill.compareTo(player2.skill);
+	}
+	public int compare1 (Player player3, Player player4) {
+		return player3.name.compareTo(player4.name);
+	}
 }
